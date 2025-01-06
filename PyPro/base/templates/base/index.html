@@ -1,0 +1,38 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+    <header class="main-header">
+        <div><img src="{% static 'base/ico.svg'%}" alt="Логотип PyPro" width="50"></div>
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">Python Programming</p>
+    </header>
+    <section class="main-section">
+        <header class="main-section-header">
+            <h2 class="main-section-h2">Встроенные функции python</h2>
+        </header>
+        <div class="main-section-content">
+            {% for key, value in builtin_functions.items %}
+            <div class="main-section-part">
+            {% for item in value%}
+                <a class="main-section-part-a" href="builtin_functions\{{item}}">{{item}}</a>
+            {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="main-section">
+        <header class="main-section-header">
+            <h2 class="main-section-h2">Встроенные инструкции python</h2>
+        </header>
+        <div class="main-section-content">
+            {% for key, value in builtin_instructions.items %}
+            <div class="main-section-part">
+            {% for item in value%}
+                <a class="main-section-part-a" href="builtin_instructions\{{item}}">{{item}}</a>
+            {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+{% include 'base/basic_bottom.html' %}

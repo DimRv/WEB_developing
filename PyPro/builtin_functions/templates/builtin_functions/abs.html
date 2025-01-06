@@ -1,0 +1,21 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+    <header class="main-header">
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">abs - от англ. absolute</p>
+    </header>
+    <section class="main-section">
+        <header class="main-section-header">
+            <h2 class="main-section-h2">Синтаксис</h2>
+        </header>
+        <div class="main-section-content">
+            <pre>
+<code class="py-func">abs</code>(
+     <code class="py-param">num</code>:<code class="py-anno">Union[int,float,complex]</code>
+) -> <code class="py-anno">Union[int,float]</code>
+            </pre>
+        </div>
+    </section>
+</main>
+{% include 'base/basic_bottom.html' %}
