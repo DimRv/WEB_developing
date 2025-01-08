@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import keyword
+import os
 
 
 def index(request):
@@ -24,4 +25,15 @@ def details(request, func_name):
     content = {
         "title": f"Встроенная функция {func_name}",
     }
+    path = f'{os.getcwd()}\\builtin_functions\\static\\builtin_functions\\'
+    examples = []
+    for address, dirs, files in os.walk(f'{path}\\{func_name}'):
+        if dirs:
+            for dir_name in dirs:
+                files = os.listdir(f'{path}\\{func_name}\\{dir_name}')
+                for file in files:
+                    with open(f'{path}\\{func_name}\\{dir_name}\\{file}', 'r', encoding='utf-8') as opened:
+                        examples.append(opened.read())
+    content["examples"] = examples
+
     return render(request, f"builtin_functions/{func_name}.html", content)

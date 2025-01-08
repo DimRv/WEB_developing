@@ -2,31 +2,65 @@
     padding: 0;
     margin: 0;
     color: #444;
-    font-family: "Courier new", "Lucida Console", monospace;
+    font-family: "Sitka Subheading", "Courier new", "Lucida Console", monospace;
+    box-sizing: border-box;
 }
 a {
+    color: blue;
     text-decoration: none;
 }
 
 
 body {
     background:
-    linear-gradient(to top, rgba(250,0,0,.3), rgba(250,0,0,.3) 3%,rgba(255,255,255,.3) 4%, rgba(255,255,255,.3) 100%),
-    linear-gradient(to right, rgba(250,0,0,.3), rgba(250,0,0,.3) 3%,rgba(255,255,255,.3) 4%, rgba(255,255,255,.3) 100%);
-    background-size: 20px 20px;
+    linear-gradient(to top, rgba(250,0,0,.2), rgba(250,0,0,.3) 3%,rgba(255,255,255,.3) 4%, rgba(255,255,255,.3) 100%),
+    linear-gradient(to right, rgba(250,0,0,.2), rgba(250,0,0,.3) 3%,rgba(255,255,255,.3) 4%, rgba(255,255,255,.3) 100%);
+    background-size: 32px 32px;
+}
+
+/* СТИЛИ ЛОГОТИПА*/
+.logotype {
+    width: 256px;
+    margin: 1rem auto;
+    background: #f0f0f0;
+    border: 1px solid grey;
+}
+.logotype:hover {
+    background: #e0e0e0;
+}
+.logotype a {
+    padding: 1rem;
+}
+.logotype-image {
+    display: block;
+    width: 50px;
+    margin: auto;
+    text-align: center;
+}
+.logotype-name {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.logotype-transcript {
+    color: #999;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 /* СТИЛИ СТРАНИЦЫ*/
 .page {
-    margin: 3rem auto;
+    margin: 2rem auto;
     max-width: 1200px;
     min-height: 1000px;
     background: #fff;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
+    padding: 2rem;
 }
 
 /* СТИЛИ СТРАНИЦЫ*/
-.hat {
+/*.hat {
     background: #ddd;
     border-bottom: 1px solid #aaa;
 }
@@ -57,28 +91,33 @@ body {
     text-align: center;
     color: #999;
 }
+*/
 
 .main {
     padding: 1rem;
 }
-.main-header{
+
+.main-h1 {
+    margin-top: 2rem;
     text-align: center;
+    font-size: 2.2rem;
 }
-.main-h1 {
-    font-size: 2.5rem;
-}
-.main-h1 {
-    font-size: 2.5rem;
-}
+
 .main-about {
-    font-size: 1rem;
-    color: #999;
+    text-align: center;
+    color: #888;
+    margin-bottom: 2rem;
+}
+
+.main-h2 {
+    margin: 1rem;
+    text-align: center;
+    font-size: 1.8rem;
 }
 
 .main-section {
     margin-top: 2rem;
 }
-
 .main-section-header {
     padding-left: 1rem;
     background: #ddd;
@@ -87,7 +126,8 @@ body {
 }
 
 .main-section-h2{
-    font-weight: 100;
+    text-align: center;
+    font-weight: 800;
     font-size: 1.5rem;
 }
 
@@ -95,6 +135,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     border: 1px solid #ccc;
+    background: #fff;
 }
 .main-section-part{
     padding: 1rem;
@@ -109,9 +150,56 @@ body {
     text-decoration: underline;
 }
 
-.py-func {
-    color: darkBlue;
+.main-syntax {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: 1rem;
 }
-.py-param {
-    color:
+.main-syntax-table {
+    border-collapse: collapse;
+}
+.main-syntax-table td:nth-child(1){
+    padding-right: 3rem;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.main-syntax-code {
+    padding: 1rem;
+    border: 1px solid #999;
+    background: #f0f0f0;
+}
+
+.code-python-func {
+    color: blue;
+}
+.code-python-param {
+    color: orange;
+}
+.main-p {
+    margin: 0.5rem 0;
+}
+.main-figure-block {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+.main-figure {
+    margin: 1rem;
+}
+.main-example-block {
+    font-family: monospace;
+    border: 1px solid #888;
+    margin: 1rem;
+}
+.main-example-content {
+    font-family: monospace;
+    font-size: 1rem;
+    padding: 1.1rem;
+    background: #f0f0f0;
 }
