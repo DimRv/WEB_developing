@@ -1,5 +1,5 @@
 from django.shortcuts import render
-import keyword
+from . import code
 import os
 
 
@@ -33,7 +33,8 @@ def details(request, func_name):
                 files = os.listdir(f'{path}\\{func_name}\\{dir_name}')
                 for file in files:
                     with open(f'{path}\\{func_name}\\{dir_name}\\{file}', 'r', encoding='utf-8') as opened:
-                        examples.append(opened.read())
+                        ex_code = opened.read()
+                    examples.append(code.color_code(ex_code))
     content["examples"] = examples
 
     return render(request, f"builtin_functions/{func_name}.html", content)

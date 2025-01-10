@@ -9,19 +9,21 @@ a {
     color: blue;
     text-decoration: none;
 }
-
+code {
+    font-family: monospace;
+}
 
 body {
     background:
     linear-gradient(to top, rgba(250,0,0,.2), rgba(250,0,0,.3) 3%,rgba(255,255,255,.3) 4%, rgba(255,255,255,.3) 100%),
     linear-gradient(to right, rgba(250,0,0,.2), rgba(250,0,0,.3) 3%,rgba(255,255,255,.3) 4%, rgba(255,255,255,.3) 100%);
-    background-size: 32px 32px;
+    background-size: 20px 20px;
 }
 
 /* СТИЛИ ЛОГОТИПА*/
 .logotype {
     width: 256px;
-    margin: 1rem auto;
+    margin: .5rem auto;
     background: #f0f0f0;
     border: 1px solid grey;
 }
@@ -39,7 +41,7 @@ body {
 }
 .logotype-name {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 .logotype-transcript {
@@ -94,7 +96,6 @@ body {
 */
 
 .main {
-    padding: 1rem;
 }
 
 .main-h1 {
@@ -139,7 +140,7 @@ body {
 }
 .main-section-part{
     padding: 1rem;
-    width: 6rem;
+    width: 7rem;
 }
 .main-section-part-a {
     display: block;
@@ -178,6 +179,18 @@ body {
 .code-python-param {
     color: orange;
 }
+.code-python-com {
+    color: grey;
+}
+.code-python-comment {
+    color: green;
+}
+.code-python-keyword {
+    color: orange;
+}
+.code-python-s{
+    color: DarkViolet;
+}
 .main-p {
     margin: 0.5rem 0;
 }
@@ -195,7 +208,7 @@ body {
 .main-example-block {
     font-family: monospace;
     border: 1px solid #888;
-    margin: 1rem;
+    margin-bottom: 1rem;
 }
 .main-example-content {
     font-family: monospace;

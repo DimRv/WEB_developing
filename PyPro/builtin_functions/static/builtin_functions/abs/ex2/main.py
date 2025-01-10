@@ -1,5 +1,4 @@
-"""Пример применения встроенной функции abs() с объектами"""
-
+"""Пример применения встроенной функции abs с объектами"""
 
 class Coord:
     def __init__(self, x, y):
@@ -11,4 +10,4 @@ class Coord:
 
 
 coord = Coord(-6, -8)
-print(type(coord), abs(coord))
+print(type(coord), abs(coord))  # <class '__main__.Coord'> 10.0

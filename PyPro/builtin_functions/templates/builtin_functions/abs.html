@@ -124,7 +124,7 @@
     <div class="main-examples-block">
         {% for example in examples %}
         <div class="main-example-block">
-            <pre class="main-example-content">{{example}}</pre>
+            <pre class="main-example-content">{{example|safe}}</pre>
         </div>
         {% endfor %}
     </div>
