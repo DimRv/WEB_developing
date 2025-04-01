@@ -172,6 +172,9 @@ body {
     border: 1px solid #999;
     background: #f0f0f0;
 }
+.main-syntax-ul {
+    margin-left: 3rem
+}
 
 .code-python-func {
     color: blue;
@@ -185,10 +188,16 @@ body {
 .code-python-comment {
     color: green;
 }
+.code-python-string {
+    color: green;
+}
 .code-python-keyword {
     color: orange;
 }
-.code-python-s{
+.code-python-decorator {
+    color: DarkOrange;
+}
+.code-python-self{
     color: DarkViolet;
 }
 .main-p {
@@ -205,6 +214,10 @@ body {
 .main-figure {
     margin: 1rem;
 }
+.main-figure-caption{
+    text-align: center;
+    font-style: italic;
+}
 .main-example-block {
     font-family: monospace;
     border: 1px solid #888;
@@ -215,4 +228,20 @@ body {
     font-size: 1rem;
     padding: 1.1rem;
     background: #f0f0f0;
+    overflow-x: auto;
+}
+.main-infotable {
+    margin: auto;
+    border-collapse: collapse;
+}
+.main-infotable td, .main-infotable th{
+    padding: .3rem;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+.main-infotable th{
+    background: #eee;
+}
+.main-infotable td{
+    background: #f8f8f8;
 }

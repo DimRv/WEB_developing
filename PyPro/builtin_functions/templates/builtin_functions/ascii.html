@@ -1,0 +1,189 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+    <header class="main-header">
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">ascii - от англ. American Standard Code for Information Interchange</p>
+    </header>
+    <div class="main-syntax-block">
+        <h2 class="main-h2">Синтаксис</h2>
+        <div class="main-syntax">
+            <pre class="main-syntax-code"><!--
+            --><code class="code-python-func">ascii</code>(<code class="code-python-param">obj</code>) -> str<!--
+            --></pre>
+        </div>
+        <table class="main-syntax-table">
+            <tr>
+                <td>obj</td>
+                <td>Любой объект, например, объекты типа <a href="/builtin-types/str">str</a>, <a href="/builtin-types/tuple">tuple</a> или <a href="/builtin-types/set">set</a>. <i>Обязателен</i></td>
+            </tr>
+            <tr>
+                <td>str</td>
+                <td>Строка в которой все не ASCII-символы заменены их Unicode кодами</td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-description-block">
+        <h2 class="main-h2">Описание</h2>
+        <p class="main-p">Встроенная функция <b><code class="code-python-func">ascii</code></b> (от англ. American Standard Code for Information Interchange - Американский cтандарт кодирования для обмена информацией)
+            &mdash; подобен функции <a href="/builtin_functions/str">str</a>, только возвращаемая строка будет состоять из символов входящих в ACSII, остальные символы будут заменены их Unicode кодами.</p>
+        <p>ACSII это код один из первых стандартов кодирования символов для передачи текста по сети, используется с 1963 года и применяется до сих пор.
+        Таблица символов состоит из 128 значений (2<sup>7</sup>), состоящих из 32 команд управления телетайпом, символов английского языка, цифр и знаков.</p>
+        <div class="main-figure-block">
+            <figure class="main-figure">
+                <img src="{% static 'builtin_functions/teletype2.jpg' %}" alt="teletype 1963" width="470">
+                <figcaption class="main-figure-caption">Телетайп модель 33 1963 года выпуска</figcaption>
+            </figure>
+            <figure class="main-figure">
+                <table class="main-infotable" width="500">
+                <tbody>
+                <tr>
+                    <th></th>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    <th>E</th>
+                    <th>F</th>
+                </tr>
+                <tr>
+                    <th>0</th>
+                    <td colspan="16" rowspan="2">Управление телетайпом</td>
+                </tr>
+                <tr>
+                    <th>1</th>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td></td>
+                    <td>!</td>
+                    <td>"</td>
+                    <td>#</td>
+                    <td>$</td>
+                    <td>%</td>
+                    <td>&amp;</td>
+                    <td>'</td>
+                    <td>(</td>
+                    <td>)</td>
+                    <td>*</td>
+                    <td>+</td>
+                    <td>,</td>
+                    <td>-</td>
+                    <td>.</td>
+                    <td>/</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>:</td>
+                    <td>;</td>
+                    <td>&lt;</td>
+                    <td>=</td>
+                    <td>&gt;</td>
+                    <td>?</td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td>@</td>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                    <td>D</td>
+                    <td>E</td>
+                    <td>F</td>
+                    <td>G</td>
+                    <td>H</td>
+                    <td>I</td>
+                    <td>J</td>
+                    <td>K</td>
+                    <td>L</td>
+                    <td>M</td>
+                    <td>N</td>
+                    <td>O</td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td>P</td>
+                    <td>Q</td>
+                    <td>R</td>
+                    <td>S</td>
+                    <td>T</td>
+                    <td>U</td>
+                    <td>V</td>
+                    <td>W</td>
+                    <td>X</td>
+                    <td>Y</td>
+                    <td>Z</td>
+                    <td>[</td>
+                    <td>\</td>
+                    <td>]</td>
+                    <td>^</td>
+                    <td>_</td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td>`</td>
+                    <td>a</td>
+                    <td>b</td>
+                    <td>c</td>
+                    <td>d</td>
+                    <td>e</td>
+                    <td>f</td>
+                    <td>g</td>
+                    <td>h</td>
+                    <td>i</td>
+                    <td>j</td>
+                    <td>k</td>
+                    <td>l</td>
+                    <td>m</td>
+                    <td>n</td>
+                    <td>o</td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td>p</td>
+                    <td>q</td>
+                    <td>r</td>
+                    <td>s</td>
+                    <td>t</td>
+                    <td>u</td>
+                    <td>v</td>
+                    <td>w</td>
+                    <td>x</td>
+                    <td>y</td>
+                    <td>z</td>
+                    <td>{</td>
+                    <td>|</td>
+                    <td>}</td>
+                    <td>~</td>
+                    <td>DEL</td>
+                </tr>
+            </tbody>
+        </table>
+                <figcaption class="main-figure-caption">Табл1. ASCII таблица символов</figcaption>
+            </figure>
+        </div>
+
+    </div>
+    {% include 'builtin_functions/common_bottom.html'%}
+</main>
+{% include 'base/basic_bottom.html' %}

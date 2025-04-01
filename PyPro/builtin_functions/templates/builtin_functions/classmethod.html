@@ -1,0 +1,34 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+    <header class="main-header">
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">classmethod - от англ. class; method</p>
+    </header>
+    <div class="main-syntax-block">
+        <h2 class="main-h2">Синтаксис</h2>
+        <div class="main-syntax">
+            <pre class="main-syntax-code"><!--
+            --><code class="code-python-func">classmethod</code>(<code class="code-python-param">func</code>) -> method<!--
+            --></pre>
+        </div>
+        <table class="main-syntax-table">
+            <tr>
+                <td>func</td>
+                <td>Функция, которая должна стать методом класса. <i>Обязателен</i>.</td>
+            </tr>
+            <tr>
+                <td>method</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-description-block">
+        <h2 class="main-h2">Описание</h2>
+        <p class="main-p">Встроенная функция <b><code class="code-python-func">callable</code></b> (от англ. callable - вызываемый)
+            &mdash; возвращает Тrue для объектов, которые можно вызвать, иначе False.</p>
+        <p>В вызываемых объектах реализован метод __call__, например это <a href="\builtin_types\function">функции</a> или <a href="\builtin_types\function">классы</a>.</p>
+    </div>
+    {% include 'builtin_functions/common_bottom.html'%}
+</main>
+{% include 'base/basic_bottom.html' %}

@@ -1,0 +1,67 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+    <header class="main-header">
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">bytearray - от англ. byte; array</p>
+    </header>
+    <div class="main-syntax-block">
+        <h2 class="main-h2">Синтаксис</h2>
+        <div class="main-syntax">
+            <pre class="main-syntax-code"><!--
+            --><code class="code-python-func">bytearray</code>() -> <code class="code-python-keyword">bytearray</code>
+<code class="code-python-func">bytearray</code>(<code class="code-python-param">int</code>) -> <code class="code-python-keyword">bytearray</code>
+<code class="code-python-func">bytearray</code>(<code class="code-python-param">iter</code>) -> <code class="code-python-keyword">bytearray</code>
+<code class="code-python-func">bytearray</code>(<code class="code-python-param">str</code>, <code class="code-python-param">encoding</code>, <code class="code-python-param">error</code>) -> <code class="code-python-keyword">bytearray</code><!--
+            --></pre>
+        </div>
+        <table class="main-syntax-table">
+            <tr>
+                <td>int</td>
+                <td>Число типа <a href="/builtin-types/int">int</a>.</td>
+            </tr>
+            <tr>
+                <td>iter</td>
+                <td>Итератор, элементы которого целые числа <a href="/builtin-types/int">int</a>.</td>
+            </tr>
+            <tr>
+                <td>str</td>
+                <td>Строка <a href="/builtin-types/str">str</a>.</td>
+            </tr>
+            <tr>
+                <td>encoding</td>
+                <td>Кодировка для перевода символов, например "ascii" или "utf-8". <i>Обязателен если первый параметр str</i>.</td>
+            </tr>
+            <tr>
+                <td>error</td>
+                <td>Параметр указывает как обрабатывать ошибки, полученные при кодировке строки.</p>
+                    <p>Возможные значения:</p>
+                    <ul class="main-syntax-ul">
+                        <li><code class="code-python-string">'strict'</code> - создается исключение UnicodeEncodeError</li>
+                        <li><code class="code-python-string">'ignore'</code>  - отсеивает ошибочные символы</li>
+                        <li><code class="code-python-string">'replace'</code>  - заменяет ошибочные символы на знак ?</li>
+                        <li><code class="code-python-string">'xmlcharrefreplace'</code>  - заменяет на формат &#код;</li>
+                        <li><code class="code-python-string">'backslashreplace'</code>  - заменяет на формат \\uкод</li>
+                        <li><code class="code-python-string">'namereplace'</code>  - заменяет на формат \\N{Описание Кода Символа}</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>bytearray</td>
+                <td>Объект типа изменяемая байтовая строка.</td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-description-block">
+        <h2 class="main-h2">Описание</h2>
+        <p class="main-p">Встроенная функция <b><code class="code-python-func">bytearray</code></b> (от англ. byte - байт; array - массив)
+            &mdash; используется для создания или преобразования объектов к типу <a href="\builtin_types\bytearray">не изменяемая байтовая строка</a>
+        </p>
+        <p class="main-p">Создает пустую не изменяемую байтовую строку, если в параметре ничего не было передано.</p>
+        <p class="main-p">Если в параметре было указано целое число <code>x</code>, то создается не изменяемая байтовая строка длины <code>x</code></p>
+        <p class="main-p">В итераторе может быть любая последовательность из целых чисел от 0 до 255.</p>
+        <p class="main-p">Если необходимо создать не изменяемую байтовую строку из обычной строки, то обязательно нужно указать кодировку для преобразования в <code>encoding</code></p>
+    </div>
+    {% include 'builtin_functions/common_bottom.html'%}
+</main>
+{% include 'base/basic_bottom.html' %}

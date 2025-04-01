@@ -1,0 +1,35 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+    <header class="main-header">
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">bool - от англ. boolean</p>
+    </header>
+    <div class="main-syntax-block">
+        <h2 class="main-h2">Синтаксис</h2>
+        <div class="main-syntax">
+            <pre class="main-syntax-code"><!--
+            --><code class="code-python-func">bool</code>(<code class="code-python-param">obj</code>) -> bool<!--
+            --></pre>
+        </div>
+        <table class="main-syntax-table">
+            <tr>
+                <td>obj</td>
+                <td>Объект любого типа данных. <i>Обязателен</i>.</td>
+            </tr>
+            <tr>
+                <td>bool</td>
+                <td>Булево представление объекта</td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-description-block">
+        <h2 class="main-h2">Описание</h2>
+        <p class="main-p">Встроенная функция <b><code class="code-python-func">bool</code></b> (от англ. boolean - булевый)
+            &mdash; возвращает False для пустых итерируемых объектов, 0 и для <code class="code-python-keyword">None</code>, для всех остальных объектов вернет True.
+            <a href="/builtin_types/bool/">Подробнее о типе bool</a>.</p>
+        <p>Вызывает метод <code>__bool__</code> объекта, переданного в параметре.</p>
+    </div>
+    {% include 'builtin_functions/common_bottom.html'%}
+</main>
+{% include 'base/basic_bottom.html' %}

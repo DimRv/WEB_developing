@@ -15,26 +15,25 @@
         <table class="main-syntax-table">
             <tr>
                 <td>x</td>
-                <td>Обычно это число типа <a href="/built-in-types/int">int</a>, <a href="/built-in-types/int">float</a> или <a href="/built-in-types/int">complex</a>, но может быть любой объект в котором реализован метод
-                    __abs__(). Обязателен.</td>
+                <td>Обычно это число типа <a href="/builtin-types/int">int</a>, <a href="/builtin-types/int">float</a> или <a href="/builtin-types/int">complex</a>, но может быть любой объект в котором реализован метод
+                    __abs__(). <i>Обязателен</i>.</td>
             </tr>
             <tr>
                 <td>num</td>
-                <td>Абсолютное значение числа (int, float)</td>
+                <td>Абсолютное значение числа (<a href="/built-in-types/int">int</a>, <a href="/built-in-types/float">float</a>)</td>
             </tr>
         </table>
     </div>
     <div class="main-description-block">
         <h2 class="main-h2">Описание</h2>
         <p class="main-p">Встроенная функция <b><code class="code-python-func">abs</code></b> (от англ. absolute - абсолютный)
-            &mdash; возвращает абсолютное значение числа, переданного в параметре.</p>
-        <p>Абсолютное значение числа или модуль числа в математике &mdash;
-            это положительное значение этого числа, часто объясняется геометрическими терминами как расстояние от начала координат до указанной точки.</p>
-        <p class="main-p">В модуле Math есть похожая функция Math.fabs() которая возвращает абсолютное значение числа, но только в десятичном виде (float)</p>
+            &mdash; возвращает абсолютное значение числа, переданного в параметре. Тип возвращаемого числа зависит от типа переданного числа в параметре: если в параметре int, то и вернет int, в остальных случаях - float </p>
+        <p>Абсолютное значение числа (модуль числа) &mdash; не отрицательное значение этого числа, неформально объясняется как расстояние от начала координат до указанной точки.</p>
+        <p class="main-p">В модуле Math есть похожая функция Math.fabs() которая возвращает абсолютное значение числа, но только в десятичном виде float.</p>
         <div class="main-figure-block">
             <figure class="main-figure">
                 <canvas id="graf1" width="300" height="300"></canvas>
-                <figcaption>Рис 1. Абсолютное значение числа -4</figcaption>
+                <figcaption class="main-figure-caption">Рис 1. Абсолютное значение числа -4</figcaption>
                 <script>
                     canvas = document.getElementById("graf1");
                     ctx = canvas.getContext("2d");
@@ -60,7 +59,7 @@
                         ctx.stroke();
                     }
                     ctx.fillText("-4",15,175);
-                    ctx.fillText("x",290, 175);
+                    ctx.fillText("i",290, 175);
                     ctx.beginPath();
                     ctx.fillStyle = "blue";
                     ctx.arc(30, 150, 4, 0, 2 * Math.PI);
@@ -76,7 +75,7 @@
             </figure>
             <figure class="main-figure">
                 <canvas id="graf2" width="300" height="300"></canvas>
-                <figcaption>Рис 2. Абсолютное значение числа -4+3j</figcaption>
+                <figcaption class="main-figure-caption">Рис 2. Абсолютное значение числа -4+3j</figcaption>
                 <script>
                     canvas = document.getElementById("graf2");
                     ctx = canvas.getContext("2d");
@@ -121,24 +120,6 @@
             </figure>
         </div>
     </div>
-    <div class="main-examples-block">
-        {% for example in examples %}
-        <div class="main-example-block">
-            <pre class="main-example-content">{{example|safe}}</pre>
-        </div>
-        {% endfor %}
-    </div>
-    <!--<section class="main-section">
-        <header class="main-section-header">
-            <h2 class="main-section-h2">Синтаксис</h2>
-        </header>
-        <div class="main-section-content">
-            <pre>
-<code class="py-func">abs</code>(
-  <code class="py-param">num</code>:<code class="py-anno">int, float, complex, obj</code>
-) -> <code class="py-param">num</code>:<code class="py-anno">int, float</code>
-            </pre>
-        </div>
-    </section>-->
+    {% include 'builtin_functions/common_bottom.html'%}
 </main>
 {% include 'base/basic_bottom.html' %}

@@ -1,0 +1,35 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+    <header class="main-header">
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">any - от англ. any</p>
+    </header>
+    <div class="main-syntax-block">
+        <h2 class="main-h2">Синтаксис</h2>
+        <div class="main-syntax">
+            <pre class="main-syntax-code"><!--
+            --><code class="code-python-func">any</code>(<code class="code-python-param">iter</code>) -> bool<!--
+            --></pre>
+        </div>
+        <table class="main-syntax-table">
+            <tr>
+                <td>iter</td>
+                <td>Любой итерируемый объект, например, объекты типа <a href="/builtin-types/list">list</a>, <a href="/builtin-types/tuple">tuple</a> или <a href="/builtin-types/set">set</a>. <i>Обязателен</i></td>
+            </tr>
+            <tr>
+                <td>bool</td>
+                <td>True - если хотя бы один элемент итерируемого объекта в булевом виде True, иначе False</td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-description-block">
+        <h2 class="main-h2">Описание</h2>
+        <p class="main-p">Встроенная функция <b><code class="code-python-func">any</code></b> (от англ. any - любой)
+            &mdash; возвращает True если хоть один элемент в объекте равен True в булевом представлении.</p>
+        <p class="main-p">Если в параметре передан пустой итератор, то функция вернет False.</p>
+        <p>По своему функционалу очень похожа на функцию <a href='/builtin_functions/all'>all</a>, только та возвращает True если все элементы в объекте True.</p>
+    </div>
+    {% include 'builtin_functions/common_bottom.html'%}
+</main>
+{% include 'base/basic_bottom.html' %}

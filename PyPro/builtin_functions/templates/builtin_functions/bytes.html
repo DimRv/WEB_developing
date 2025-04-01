@@ -1,0 +1,88 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+    <header class="main-header">
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">bytes - от англ. bytes</p>
+    </header>
+    <div class="main-syntax-block">
+        <h2 class="main-h2">Синтаксис</h2>
+        <div class="main-syntax">
+            <pre class="main-syntax-code"><!--
+            --><code class="code-python-func">bytes</code>() -> <code class="code-python-keyword">bytes</code>
+<code class="code-python-func">bytes</code>(<code class="code-python-param">int</code>) -> <code class="code-python-keyword">bytes</code>
+<code class="code-python-func">bytes</code>(<code class="code-python-param">iter</code>) -> <code class="code-python-keyword">bytes</code>
+<code class="code-python-func">bytes</code>(<code class="code-python-param">str</code>, <code class="code-python-param">encoding</code>, <code class="code-python-param">error</code>) -> <code class="code-python-keyword">bytes</code><!--
+            --></pre>
+        </div>
+        <table class="main-syntax-table">
+            <tr>
+                <td>int</td>
+                <td>Число типа <a href="/builtin-types/int">int</a>.</td>
+            </tr>
+            <tr>
+                <td>iter</td>
+                <td>Итератор, элементы которого целые числа <a href="/builtin-types/int">int</a>.</td>
+            </tr>
+            <tr>
+                <td>str</td>
+                <td>Строка <a href="/builtin-types/str">str</a>.</td>
+            </tr>
+            <tr>
+                <td>encoding</td>
+                <td>Кодировка для перевода символов, например "ascii" или "utf-8". <i>Обязателен если первый параметр str</i>.</td>
+            </tr>
+            <tr>
+                <td>error</td>
+                <td>Параметр указывает как обрабатывать ошибки, полученные при кодировке строки.</p>
+                    <p>Возможные значения:</p>
+                    <ul class="main-syntax-ul">
+                        <li><code class="code-python-string">'strict'</code> - создается исключение UnicodeEncodeError</li>
+                        <li><code class="code-python-string">'ignore'</code>  - отсеивает ошибочные символы</li>
+                        <li><code class="code-python-string">'replace'</code>  - заменяет ошибочные символы на знак ?</li>
+                        <li><code class="code-python-string">'xmlcharrefreplace'</code>  - заменяет на формат &#код;</li>
+                        <li><code class="code-python-string">'backslashreplace'</code>  - заменяет на формат \\uкод</li>
+                        <li><code class="code-python-string">'namereplace'</code>  - заменяет на формат \\N{Описание Кода Символа}</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>bytes</td>
+                <td>Объект типа байтовая строка.</td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-description-block">
+        <h2 class="main-h2">Описание</h2>
+        <p class="main-p">Встроенная функция <b><code class="code-python-func">bytes</code></b> (от англ. bytes - байты)
+            &mdash; используется для создания или преобразования объектов к типу <a href="\builtin_types\bytes">байтовая строка</a>.
+        </p>
+        <p class="main-p">Содержимое созданной байтовой строки зависит от типа объекта, который бы передан в параметре:</p>
+        <div class="main-figure-block">
+            <figure class="main-figure">
+                <table class="main-infotable" width="500">
+                <tbody>
+                <tr>
+                    <th>Параметр</th><th>Возвращаемое значение</th>
+                </tr>
+                <tr>
+                    <td></td><td>Вернет пустую байтовую строку</td>
+                </tr>
+                <tr>
+                    <td>int</td><td>Вернет байтовую строку, заполненную нулями длины int</td>
+                </tr>
+                <tr>
+                    <td>str</td><td>Вернет байтовую строку, заполненную числами от 0 до 255</td>
+                </tr>
+                <tr>
+                    <td>iter</td><td>Вернет байтовую строку, заполненную числами от 0 до 255</td>
+                </tr>
+                </tbody>
+                </table>
+                <figcaption class="main-figure-caption">С</figcaption>
+            </figure>
+        </div>
+    </div>
+    {% include 'builtin_functions/common_bottom.html'%}
+</main>
+{% include 'base/basic_bottom.html' %}

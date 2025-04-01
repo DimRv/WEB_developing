@@ -1,0 +1,28 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+    <header class="main-header">
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">breakpoint - от англ. break point</p>
+    </header>
+    <div class="main-syntax-block">
+        <h2 class="main-h2">Синтаксис</h2>
+        <div class="main-syntax">
+            <pre class="main-syntax-code"><!--
+            --><code class="code-python-func">breakpoint</code>() -> <code class="code-python-keyword">None</code><!--
+            --></pre>
+        </div>
+    </div>
+    <div class="main-description-block">
+        <h2 class="main-h2">Описание</h2>
+        <p class="main-p">Встроенная функция <b><code class="code-python-func">breakpoint</code></b> (от англ. break - разрыв; point - точка)
+            &mdash; останавливает выполнение программы и запускает отладчик с помощью которого можно разобраться в ошибках программы. Отладчик по умолчанию &mdash; PDB.
+            В момент останова переменные содержат значения на текущую строку выполнения кода.
+        </p>
+        <p>Для выхода из режима отладки и продолжения выполнения кода необходимо выполнить команду 'c' (от англ. continue - продолжить). Нажать <code>с+Enter</code>.</p>
+        <p>Точки останова могут быть проигнорированы если в переменную окружения PYTHONBREAKPOINT установить 0.</p>
+        <p>Через переменную окружения PYTHONBREAKPOINT также можно задать отладчик, указав необходимую функцию.</p>
+    </div>
+    {% include 'builtin_functions/common_bottom.html'%}
+</main>
+{% include 'base/basic_bottom.html' %}
