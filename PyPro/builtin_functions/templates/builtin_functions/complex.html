@@ -1,0 +1,46 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+    <header class="main-header">
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">complex - от англ. complex</p>
+    </header>
+    <div class="main-syntax-block">
+        <h2 class="main-h2">Синтаксис</h2>
+        <div class="main-syntax">
+            <pre class="main-syntax-code"><!--
+            --><code class="code-python-func">complex</code>() -> <code class="code-python-keyword">complex</code>
+<code class="code-python-func">complex</code>(<code class="code-python-param">number</code>) -> <code class="code-python-keyword">complex</code>
+<code class="code-python-func">complex</code>(<code class="code-python-param">str</code>) -> <code class="code-python-keyword">complex</code>
+<code class="code-python-func">complex</code>(<code class="code-python-param">real</code>, <code class="code-python-param">imag</code>) -> <code class="code-python-keyword">complex</code><!--
+            --></pre>
+        </div>
+        <table class="main-syntax-table">
+            <tr>
+                <td>number</td>
+                <td>Число типа <a href="/builtin-types/int">int</a> или <a href="/builtin-types/int">float</a>.</td>
+            </tr>
+            <tr>
+                <td>str</td>
+                <td>Строка в формате 'real+imag'.</td>
+            </tr>
+            <tr>
+                <td>real</td>
+                <td>Реальная часть комплексного числа.</td>
+            </tr>
+            <tr>
+                <td>imag</td>
+                <td>Мнимая часть комплексного числа</td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-description-block">
+        <h2 class="main-h2">Описание</h2>
+        <p class="main-p">Встроенная функция <b><code class="code-python-func">complex</code></b> (от англ. complex - комплексное число)
+            &mdash; используется для создания или преобразования объектов к типу <a href="\builtin_types\complex">комплексное число</a>
+        </p>
+        <p class="main-p">Комплексное число - это число состоящее из действительной (реальной) и мнимой частей</p>
+    </div>
+    {% include 'builtin_functions/common_bottom.html'%}
+</main>
+{% include 'base/basic_bottom.html' %}

@@ -1,3 +1,4 @@
+
 {% load static %}
 {% include 'base/basic_top.html' %}
 <main class="main">
@@ -15,19 +16,22 @@
         <table class="main-syntax-table">
             <tr>
                 <td>func</td>
-                <td>Функция, которая должна стать методом класса. <i>Обязателен</i>.</td>
+                <td>Функция, которая содержит в параметре объект класса. <i>Обязателен</i>.</td>
             </tr>
             <tr>
                 <td>method</td>
-                <td></td>
+                <td>Метод, предназначенный для взаимодействия с объектом класса, а не с экземплярами класса.</td>
             </tr>
         </table>
     </div>
     <div class="main-description-block">
         <h2 class="main-h2">Описание</h2>
-        <p class="main-p">Встроенная функция <b><code class="code-python-func">callable</code></b> (от англ. callable - вызываемый)
-            &mdash; возвращает Тrue для объектов, которые можно вызвать, иначе False.</p>
-        <p>В вызываемых объектах реализован метод __call__, например это <a href="\builtin_types\function">функции</a> или <a href="\builtin_types\function">классы</a>.</p>
+        <p class="main-p">Встроенная функция <b><code class="code-python-func">classmethod</code></b> (от англ. class -
+            класс, method - метод) &mdash; преобразует переданную в параметре функцию в метод класса.</p>
+        <p class="main-p">Метод - функция объявленная в теле класса, содержит первым параметром self - ссылку на экземпляр,
+            предназначена для взаимодействия с экземплярами класса.</p>
+        <p class="main-p">Метод класса - метод который содержит первым параметром cls - ссылку на класс, предназначен для взаимодействия
+        с классом экземпляра, с его атрибутами и методами.</p>
     </div>
     {% include 'builtin_functions/common_bottom.html'%}
 </main>

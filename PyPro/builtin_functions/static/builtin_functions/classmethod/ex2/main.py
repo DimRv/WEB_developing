@@ -1,4 +1,4 @@
-"""Пример использования функции classmethod"""
+"""Пример использования функции classmethod через декораторы"""
 
 
 class MyClass:
@@ -9,7 +9,7 @@ class MyClass:
         cls.value += 1
 
 
-print(MyClass.value)
+print(MyClass.value)  #0
 MyClass.increase()
 MyClass.increase()
-print(MyClass.value)
+print(MyClass.value)  #2

@@ -1,0 +1,42 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+    <header class="main-header">
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">compile- от англ. compile</p>
+    </header>
+    <div class="main-syntax-block">
+        <h2 class="main-h2">Синтаксис</h2>
+        <div class="main-syntax">
+            <pre class="main-syntax-code"><!--
+            --><code class="code-python-func">compile</code>(<code class="code-python-param">source</code>, <!--
+            --><code class="code-python-param">filename</code>, <code class="code-python-param">mode</code>) <!--
+            -->-> code<!--
+            --></pre>
+        </div>
+        <table class="main-syntax-table">
+            <tr>
+                <td>source</td>
+                <td>Строка. Текст кода который нужно выполнить. <i>Обязателен</i>.</td>
+            </tr>
+            <tr>
+                <td>filename</td>
+                <td>Строка. Имя скрипта от куда берется код или "&lt;string&gt;" если source строка кода. <i>Обязателен</i>.</td>
+            </tr>
+            <tr>
+                <td>mode</td>
+                <td>Строка. <i>Обязателен</i>. Один из вариантов:<ul>
+                    <li>'eval' - одно выражение</li>
+                    <li>'exec' - блок операторов</li>
+                    <li>'single' - код из одного оператора</li></ul></td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-description-block">
+        <h2 class="main-h2">Описание</h2>
+        <p class="main-p">Встроенная функция <b><code class="code-python-func">compile</code></b> (от англ. compile -
+            компилировать) &mdash; преобразует код-строку в исполняемый код.</p>
+    </div>
+    {% include 'builtin_functions/common_bottom.html'%}
+</main>
+{% include 'base/basic_bottom.html' %}
