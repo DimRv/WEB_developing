@@ -1,0 +1,36 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+    <header class="main-header">
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">delattr - от англ. delete attribute</p>
+    </header>
+    <div class="main-syntax-block">
+        <h2 class="main-h2">Синтаксис</h2>
+        <div class="main-syntax">
+            <pre class="main-syntax-code"><!--
+            --><code class="code-python-func">delattr</code>(<code class="code-python-param">obj</code>, <!--
+            --><code class="code-python-param">attr_name</code>) <!--
+            -->-> None<!--
+            --></pre>
+        </div>
+        <table class="main-syntax-table">
+            <tr>
+                <td>obj</td>
+                <td>Объект в котором нужно удалить атрибут. <i>Обязателен</i>.</td>
+            </tr>
+            <tr>
+                <td>attr_name</td>
+                <td>Строка. Название аттрибута для удаления. <i>Обязателен</i>.</td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-description-block">
+        <h2 class="main-h2">Описание</h2>
+        <p class="main-p">Встроенная функция <b><code class="code-python-func">delattr</code></b> (от англ. delete -
+            удалить; attribute - атрибут) &mdash; удаляет атрибут в указанном объекте.</p>
+        <p class="main-p">Аналог команды <code>del obj.attr</code>, только в качестве аргумента передается строка.</p>
+    </div>
+    {% include 'builtin_functions/common_bottom.html'%}
+</main>
+{% include 'base/basic_bottom.html' %}
