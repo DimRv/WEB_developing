@@ -1,0 +1,33 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+    <header class="main-header">
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">divmod - от англ. division и module</p>
+    </header>
+    <div class="main-syntax-block">
+        <h2 class="main-h2">Синтаксис</h2>
+        <div class="main-syntax">
+            <pre class="main-syntax-code"><!--
+            --><code class="code-python-func">divmod</code>(a, b) -> <code class="code-python-keyword">tuple</code></pre>
+        </div>
+        <table class="main-syntax-table">
+            <tr>
+                <td>a и b</td>
+                <td>Число int или float делимое и делитель. <i>Обязательны</i></td>
+            </tr>
+            <tr>
+                <td>tuple</td>
+                <td>Кортеж. Результат вычисления (a//b, a%b)</td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-description-block">
+        <h2 class="main-h2">Описание</h2>
+        <p class="main-p">Встроенная функция <b><code class="code-python-func">divmod</code></b> (от англ. division -
+            деление; module - модуль) &mdash; возвращает кортеж: результат целочисленного деления и остаток от деления.
+        </p>
+    </div>
+    {% include 'builtin_functions/common_bottom.html'%}
+</main>
+{% include 'base/basic_bottom.html' %}
