@@ -1,0 +1,31 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+    <header class="main-header">
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">exit - от англ. exit</p>
+    </header>
+    <div class="main-syntax-block">
+        <h2 class="main-h2">Синтаксис</h2>
+        <div class="main-syntax">
+            <pre class="main-syntax-code"><!--
+            --><code class="code-python-func">exit</code>() -> <code class="code-python-keyword">None</code></pre>
+        </div>
+        <table class="main-syntax-table">
+            <tr>
+                <td>None</td>
+                <td>Объект ничего</td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-description-block">
+        <h2 class="main-h2">Описание</h2>
+        <p class="main-p">Встроенная функция <b><code class="code-python-func">exit</code></b> (от англ. exit -
+            выход) &mdash; завершает выполнение программы. Функция обычно используется для завершения работы интерпретатора. В
+            скрипах используется похожая функция sys.exit(), которая пом возвращает операционной системе код завершения
+            программы.
+        </p>
+    </div>
+    {% include 'builtin_functions/common_bottom.html'%}
+</main>
+{% include 'base/basic_bottom.html' %}
