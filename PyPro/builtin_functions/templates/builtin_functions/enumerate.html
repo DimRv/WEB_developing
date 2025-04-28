@@ -1,0 +1,35 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+<main class="main">
+    <header class="main-header">
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">enumerate - от англ. enumerate</p>
+    </header>
+    <div class="main-syntax-block">
+        <h2 class="main-h2">Синтаксис</h2>
+        <div class="main-syntax">
+            <pre class="main-syntax-code"><!--
+            --><code class="code-python-func">enumerate</code>(iterable, start=0) -> <code class="code-python-keyword">enumerate-obj</code></pre>
+        </div>
+        <table class="main-syntax-table">
+            <tr>
+                <td>iterable</td>
+                <td>Итерируемый объект, например, список или кортеж. <i>Обязательны</i></td>
+            </tr>
+            <tr>
+                <td>enumerate-obj</td>
+                <td>Генератор, который при каждом обращении возвращает кортеж (start+index, iterable[index])</td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-description-block">
+        <h2 class="main-h2">Описание</h2>
+        <p class="main-p">Встроенная функция <b><code class="code-python-func">{{title}}</code></b> (от англ. enumerate -
+            перечисление) &mdash; предназначена для нумерации итерируемого объекта. Возвращает генератор, который при
+            каждом вызове возвращает кортеж из позиции элемента и его значения.
+        </p>
+    </div>
+    {% include 'builtin_functions/common_bottom.html'%}
+</main>
+{% include 'base/basic_bottom.html' %}
