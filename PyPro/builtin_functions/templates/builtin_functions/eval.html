@@ -1,0 +1,46 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+    <header class="main-header">
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">eval - от англ. evaluate</p>
+    </header>
+    <div class="main-syntax-block">
+        <h2 class="main-h2">Синтаксис</h2>
+        <div class="main-syntax">
+            <pre class="main-syntax-code"><!--
+            --><code class="code-python-func">eval</code>(code, globals=None, locals=None) -> <code class="code-python-keyword">object</code></pre>
+        </div>
+        <table class="main-syntax-table">
+            <tr>
+                <td>code</td>
+                <td>Строка-выражение python-кода или результат выполнения
+                    <a href="\builtin_functions\compile">compile</a>. <i>Обязателен</i>
+                </td>
+            </tr>
+            <tr>
+                <td>globals</td>
+                <td>Словарь из ключей и значений глобальных переменных участвующих в выражении</td>
+            </tr>
+            <tr>
+                <td>locals</td>
+                <td>Словарь из ключей и значений локальных переменных участвующих в выражении</td>
+            </tr>
+            <tr>
+                <td>object</td>
+                <td>Результат выполнения выражения или None, если выражение ничего не возвращает</td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-description-block">
+        <h2 class="main-h2">Описание</h2>
+        <p class="main-p">Встроенная функция <b><code class="code-python-func">eval</code></b> (от англ. evaluate -
+            рассчитать) &mdash; выполняет код строки code как выражение python-кода и возвращает результат ее выполнения. Очень
+            похожа на встроенную функцию <a href="\builtin_functions\exec">exec</a>, только выполняет одну строку
+            кода.</p>
+        <p class="main-p">Если code не является выражением, а например инструкция из нескольких строк кода, то возникнет
+            исключение SyntaxError</p>
+    </div>
+    {% include 'builtin_functions/common_bottom.html'%}
+</main>
+{% include 'base/basic_bottom.html' %}
