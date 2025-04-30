@@ -1,0 +1,34 @@
+{% load static %}
+{% include 'base/basic_top.html' %}
+<main class="main">
+    <header class="main-header">
+        <h1 class="main-h1">{{title}}</h1>
+        <p class="main-about">float - от англ. float</p>
+    </header>
+    <div class="main-syntax-block">
+        <h2 class="main-h2">Синтаксис</h2>
+        <div class="main-syntax">
+            <pre class="main-syntax-code"><!--
+            --><code class="code-python-func">float</code>(obj) -> <code class="code-python-keyword">float</code></pre>
+        </div>
+        <table class="main-syntax-table">
+            <tr>
+                <td>obj</td>
+                <td>Объект, который нужно преобразовать к типу float обычно это строка или целое число. <i>Обязателен</i></td>
+            </tr>
+            <tr>
+                <td>float</td>
+                <td>Вещественное число типа float</td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-description-block">
+        <h2 class="main-h2">Описание</h2>
+        <p class="main-p">Встроенная функция <b><code class="code-python-func">float</code></b> (от англ. float -
+            число с плавающей запятой) &mdash; предназначен для преобразования объекта к типу float.
+        </p>
+        <p class="main-p">Подробнее о типе <a href="/builtin_types/float">float</a></p>
+    </div>
+    {% include 'builtin_functions/common_bottom.html'%}
+</main>
+{% include 'base/basic_bottom.html' %}
