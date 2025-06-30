@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title%}Авторизация{% endblock%}
+
+{% block content %}
+<div class="page-content">
+    <h1 class="page-h1">Авторизация</h1>
+    <p class="page-text">В данный момент Вы авторизованы как {{content.username}}</p>
+    <form class="page-login_form" method="POST">
+        <label>
+            <span class="page-login_text">Логин:</span>
+        <input class="page-field" type="text" name="login">
+        </label>
+        <label>
+            <span class="page-login_text">Пароль:</span>
+        <input class="page-field" type="password" name="password">
+        </label>
+        <input class="page-login_submit" type="submit" value="Отправить">
+    </form>
+    {% if content.error%}<p class="page-text page-error">Не верный логин или пароль</p>{% endif %}
+    {% if content.username == 'Гость'%}
+    <p class="page-text"><a href="/registration">Регистрация</a></p>
+    {% else %}
+    <p class="page-text"><a href="/logout">Выйти из учетной записи</a></p>
+    {% endif%}
+</div>
+
+{% endblock %}

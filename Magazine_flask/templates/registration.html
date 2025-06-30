@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title%}Регистрация{% endblock%}
+
+{% block content %}
+<div class="page-content">
+    <h1 class="page-h1">Регистрация</h1>
+    <form class="page-login_form" method="POST">
+        <label>
+            <span class="page-login_text">Логин:</span>
+        <input class="page-field" type="text" name="login">
+        </label>
+        <label>
+            <span class="page-login_text">Пароль:</span>
+        <input class="page-field" type="password" name="password">
+        </label>
+        <input class="page-login_submit" type="submit" value="Отправить">
+    </form>
+    {% if content.error%}<p class="page-text page-error">Ошибка при создании записи, попробуйте другой логин.</p>{% endif %}
+
+</div>
+
+{% endblock %}

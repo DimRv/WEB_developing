@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title%}Авторизация{% endblock%}
+
+{% block content %}
+<div class="page-content">
+    <h1 class="page-h1">Корзина</h1>
+    {% if content.products%}
+    <div class="page-container">
+        <div>
+        <table class="page-table">
+        <tr>
+            <th>Название Товара</th>
+            <th>Цена товара</th>
+            <th>Кол-во</th>
+            <th>Общая цена</th>
+        </tr>
+            {% for product in content.products %}
+            <tr>
+                <form method="post" id="id{{product.cart_id}}">
+                <td>{{product.product_title}}</td>
+                <td>{{product.product_price}}</td>
+                <td>
+                    <input type="hidden" name="cart_id" value="{{product.cart_id}}">
+                    <input onchange='send_form({{product.cart_id}})' class="page-table-input" name='product_count' type="text" value={{product.cart_count}}>
+                </td>
+                <td class="page-sum">{{product.cart_count * product.product_price}}</td>
+                </form>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="3">Итого:</td>
+                <td id="result"></td>
+            </tr>
+        </table>
+            <form method="POST">
+                <input type="hidden" name="submit" value="{{content.username}}">
+                <input type="submit" class="page-submit" value="Заказать">
+            </form>
+        </div>
+    </div>
+    {%else%}
+    <p>В корзине нет товаров.</p>
+    {% endif %}
+</div>
+<script>
+    send_form = function(id){
+        form = document.querySelector("#id" + id)
+        form.submit()
+    }
+    let sum = 0;
+    for (i of document.querySelectorAll('.page-sum')){
+        sum += +i.innerText
+    document.querySelector("#result").innerHTML = sum;
+    }
+
+</script>
+{% endblock %}

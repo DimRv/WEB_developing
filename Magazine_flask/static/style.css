@@ -1,0 +1,237 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Verdana', 'Arial', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page {
+    max-width: 1200px;
+    min-width: 550px;
+    min-height: 800px;
+    margin: 0 auto;
+}
+
+.page-header {
+    position: relative;
+    background: linear-gradient(lightblue, royalblue);
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 0 4px grey;
+}
+.page-logotype {
+    padding: 1rem;
+}
+.page-logotype-text {
+    position: relative;
+    top: -10px;
+    padding-left: 1rem;
+    display: inline-block;
+    font-size: 2rem;
+    color: #eee;
+    text-shadow: black -2px 2px;
+}
+.page-session {
+    position: absolute;
+    right:2rem;
+    top:30px;
+    font-size: 1.5rem;
+}
+.page-session a {
+    color: #eee;
+    text-shadow: black -2px 2px;
+}
+.page-cart {
+    display: inline-block;
+    position: relative;
+    background: url("shop-cart.svg");
+    background-color: #eee;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: 2px 5px;
+    border: 1px solid grey;
+    border-radius: 50%;
+}
+.page-cart span{
+    position: relative;
+    font-size: .9rem;
+    color: #000;
+    text-shadow: none;
+}
+.page-content {
+    min-height: 800px;
+    margin: 2rem 0;
+    padding: 1rem;
+}
+
+.page-h1{
+    color: #444;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.page-h2{
+    margin: 2rem 0;
+    color: #222;
+    font-weight: 300;
+    font-size: 1.4rem;
+    padding: .5rem;
+    background: linear-gradient(to right, #eee, #fff 50%);
+}
+
+.page-text {
+    text-align: center;
+}
+.page-table {
+    display: block;
+    margin: 1rem auto;
+    border-collapse: collapse;
+}
+.page-table th{
+    background: #eee;
+    border-bottom: 1px solid grey;
+}
+.page-table th, td{
+    border: 1px solid grey;
+    padding: .5rem;
+}
+.page-table-td {
+    padding: 0;
+}
+.page-table-input {
+    border: none;
+    height: 2rem;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.page-table-submit {
+    padding: .5rem;
+}
+.page-hidden {
+    display: none;
+}
+
+.page-product-categories{
+    display: flex;
+    flex-wrap: wrap;
+}
+.page-product-category{
+    margin-right: 1rem;
+}
+
+.page-login_form{
+    width: 500px;
+    margin: 2rem auto;
+    padding: 20px;
+    background: #eee;
+    box-shadow: 0 0 4px grey;
+}
+
+.page-login_text {
+    font-size: 1.2rem;
+}
+
+.page-field {
+    width: 100%;
+    height: 2rem;
+    margin: .5rem 0;
+    text-align: center;
+}
+
+.page-login_submit {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    text-align: center;
+    padding: .5rem 1rem;
+    background: #fff;
+    border: 1px solid;
+}
+
+.page-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.page-container-div{
+    margin: .5rem;
+    width: 350px;
+    padding: 1rem;
+    background: AliceBlue;
+    box-shadow: 0 0 4px grey;
+    transition: 2s;
+    border-radius: 10px;
+}
+.page-container-div:nth-child(even){
+    background: Azure;
+}
+
+.page-container-div-header {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #111;
+}
+.page-container-div-figure{
+    margin:1rem auto;
+    width: 300px;
+}
+.page-container-description{
+    color: #555;
+    margin-bottom: 1rem;
+    min-height: 100px;
+}
+
+.page-container-price{
+    color: #FF6347;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.page-container-div:hover{
+    background: AntiqueWhite;
+}
+.page-container-div a{
+    display: block;
+    color: RoyalBlue;
+    transition: .2s;
+}
+.page-container-div a:hover {
+    color: red;
+    text-decoration: underline;
+}
+.page-container-submit{
+    display: block;
+    padding: .5rem;
+    width: 100px;
+    margin: 1rem auto;
+    margin-bottom: 0;
+}
+.page-footer{
+    margin-top: 2rem;
+    background: royalblue;
+    border-radius: 30px 30px 0 0;
+    box-shadow: 0 0 4px grey;
+}
+
+.page-footer-text{
+    padding: 1rem;
+    text-align: center;
+    color: #ddd;
+    font-size: 1.2rem;
+}
+
+.page-error {
+    text-align: center;
+    padding: 3rem;
+    color: red;
+}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title%}Магазин{% endblock%}
+
+{% block content %}
+<div class="page-content">
+    <h1 class="page-h1">Каталог товаров</h1>
+    <div class="page-container">
+        {% for category in content.categories %}
+        <div class="page-container-div"><label><input class="page-input" name={{category.category_id}} onchange="getProduct({{category.category_id}})" type="checkbox" checked>
+            Товары категории "{{category.category_title}}"</label></div>
+        {% endfor %}
+    </div>
+    <h2 class="page-h2">Список товаров</h2>
+    <div class="page-container">
+        {% for product in content.products %}
+        <div class="page-container-div script-{{product.product_category}}">
+            <header class="page-container-div-header">{{product.product_title}}</header>
+            <figure class="page-container-div-figure">
+                <img width=300 src="{{ url_for('static', filename='photo/' + product.product_photo) }}">
+            </figure>
+            <p class="page-container-description">{{product.product_description}}</p>
+            <div class="page-container-price">{{product.product_price}} руб</div>
+            <form method="POST">
+                <input type="hidden" name='product_id' value="{{product.product_id}}">
+                <input type="hidden" name='username' value="{{content.username}}">
+                <input type="submit" onclick='checkUser("{{content.username}}");' class="page-container-submit" value="В корзину">
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<script>
+    getProduct = function(id){
+        for (let elem of document.querySelectorAll('.script-' + id)) {
+            elem.classList.toggle('page-hidden');
+        };
+    };
+
+    checkUser = function(user){
+        if (user == 'Гость') {
+            alert(user + " не имеет прав для добавления товара в корзину, пожалуйста авторизуйтесь!");
+            event.preventDefault();
+        }
+    }
+</script>
+
+{% endblock %}

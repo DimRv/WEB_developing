@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+{% block title%}Администрирование{% endblock%}
+
+{% block content %}
+<div class="page-content">
+    <h1 class="page-h1">Администрирование</h1>
+    {% if content.error == '1' %}
+    <p class="page-text page-error">Учетная запись {{content.user_name}} не имеет прав на просмотр данной страницы.
+    Необходима <a href="/login">Авторизация</a></p>
+    {% else %}
+        <h2 class="page-h2">Изменение прав пользователей</h2>
+        <div class="page-container">
+        <form id="users" method="POST">
+            <div>
+        <table class="page-table">
+            <tr>
+                <th>Пользователь</th>
+                <th>Права</th>
+            </tr>
+                <input class="hid" type="hidden" name="user_rights">
+            {% for user in content.users %}
+            <tr>
+                <td>{{ user.user_login }}</td>
+                <td class="page-table-td"><input type="text" name='{{user.user_login}}' onchange="user_submit()" class="page-table-input" value="{{ user.user_role }}"></td>
+            </tr>
+            {% endfor %}
+        </table>
+        </form></div>
+        </div>
+        <h2 class="page-h2">Категории товаров</h2>
+        <div class="page-container">
+        <form id="category" method="POST">
+            <div>
+        <table class="page-table">
+            <tr>
+                <th>ID категории</th>
+                <th>Название категории</th>
+            </tr>
+            <input class="hid" type="hidden" name="category">
+            {% for cat in content.category %}
+            <tr>
+                <td>{{ cat.category_id }}</td>
+                <td class="page-table-td"><input type="text" name='{{cat.category_id}}' onchange="category_submit()" class="page-table-input" value="{{cat.category_title}}"></td>
+            </tr>
+            {% endfor %}
+        </table>
+        </form>
+        <form method="POST">
+            <input class='page-input' name='category_title' type="text">
+            <input type="submit" value="Добавить категорию">
+        </form>
+            </div>
+        </div>
+        <h2 class="page-h2">Карточки товаров</h2>
+        <div class="page-container">
+            <div>
+        <table class="page-table">
+            <tr>
+                <th>ID товара</th>
+                <th>Название Товара</th>
+                <th>Описание Товара</th>
+                <th>Цена товара</th>
+                <th>Категория Товара</th>
+                <th>Фото Товара</th>
+            </tr>
+            {% for product in content.products %}
+            <tr>
+                <td>{{ product.product_id }}</td>
+                <td>{{product.product_title}}</td>
+                <td>{{product.product_description}}</td>
+                <td>{{product.product_price}}</td>
+                <td>{{product.product_category}}</td>
+                <td>{{product.product_photo}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <form class="page-login_form" id="products" method="POST">
+            <label>
+                <span class="page-login_text">Название товара</span>
+                <input class="page-field" type="text" name='product_title'>
+            </label>
+            <label>
+                <span class="page-login_text">Описание товара</span>
+                <input class="page-field" type="text" name='product_description'>
+            </label>
+            <label>
+                <span class="page-login_text">Цена товара</span>
+                <input class="page-field" type="text" name='product_price'>
+            </label>
+            <label>
+                <span class="page-login_text">Категория товара</span>
+                <input class="page-field" type="number" name='product_category'>
+            </label>
+            <label>
+                <span class="page-login_text">Фото товара</span>
+                <input class="page-field" type="text" name='product_photo'>
+            </label>
+            <input class="page-login_submit" type="submit" value="Добавить товар">
+        </form>
+            </div>
+        </div>
+
+    <h2 class="page-h2">Корзины пользователей</h2>
+    <div class="page-container">
+        <div>
+            <table class="page-table">
+                <tr>
+                    <th>ID</th>
+                    <th>Пользователь</th>
+                    <th>ID товара</th>
+                    <th>Количество</th>
+                </tr>
+                {% for cart in content.carts %}
+                <tr>
+                    <td>{{cart.cart_id}}</td>
+                    <td>{{cart.cart_user}}</td>
+                    <td>{{cart.cart_product}}</td>
+                    <td>{{cart.cart_count}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+    </div>
+
+    <h2 class="page-h2">Оформленные заказы</h2>
+        <div class="page-container">
+            <div>
+                <table class="page-table">
+                    <tr>
+                        <th>ID</th>
+                        <th>Пользователь</th>
+                        <th>ID товара</th>
+                        <th>Количество</th>
+                        <th>Дата заказа</th>
+                    </tr>
+                    {% for order in content.orders %}
+                    <tr>
+                        <td>{{order.order_id}}</td>
+                        <td>{{order.order_user}}</td>
+                        <td>{{order.order_product}}</td>
+                        <td>{{order.order_count}}</td>
+                        <td>{{order.order_day}}</td>
+                    </tr>
+                    {%endfor%}
+                </table>
+            </div>
+        </div>
+        {% endif%}
+</div>
+<script>
+    user_submit = function(){
+        form = document.querySelector("#users")
+        document.querySelector("#users .hid").value = event.target.name
+        form.submit()
+    }
+    category_submit = function(){
+        form = document.querySelector("#category")
+        document.querySelector("#category .hid").value = event.target.name
+        form.submit()
+    }
+</script>
+{% endblock %}

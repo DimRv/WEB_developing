@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='ico.svg') }}" />
+</head>
+<body>
+<div class="page">
+    <header class="page-header">
+        <div class='page-logotype'>
+            <a href="/"><img width=50 src="{{ url_for('static', filename='ico.svg') }}" alt="логотип">
+            <div class="page-logotype-text">Магазин</div>
+            </a>
+        </div>
+        <div class='page-session'>
+            <a href="/login">{{content.username}}</a>
+            {% if content.cart %}
+            <a href="\cart">
+            <div class="page-cart">
+                <span>{{content.cart}}</span>
+            </div>
+            </a>
+        {% endif %}
+        </div>
+    </header>
+    {% block content%} {% endblock %}
+    <footer class="page-footer">
+        <p class="page-footer-text">Курс на Python разработчика 31.03.2025 - 01.08.2025</p>
+    </footer>
+</div>
+
+</body>
+</html>

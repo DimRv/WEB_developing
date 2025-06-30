@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'base',
     'builtin_functions',
     'builtin',
+    'lesson5',
 ]
 
 MIDDLEWARE = [

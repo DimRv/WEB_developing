@@ -19,8 +19,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from lesson5 import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('form/', views.form),
     path('', include('base.urls')),
     path('builtin_functions/', include('builtin_functions.urls')),
 ]
